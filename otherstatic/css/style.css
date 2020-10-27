@@ -536,14 +536,15 @@ p.sub-para {
     border-radius: 25px;
     padding: 10px;
     background: #6fc932;
-    transition: 5s;
-    transition: width 5s;
+    transition:all 0.3s ease;
+    opacity:0.9;
 
 }
 
 .slider-info a:hover{
-  padding: 12px;
+  /* padding: 11px; */
   background: #376e13;
+  opacity:1;
 }
 /* //text slider */
 
