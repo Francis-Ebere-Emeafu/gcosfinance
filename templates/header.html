@@ -1,6 +1,4 @@
 {% load static %}
-
-
 	<!-- header -->
 	<header>
         <div class="top">
@@ -16,7 +14,11 @@
                         </div>
                         <div class="col-sm-6 top-left">
                             <ul>
-                                <li><i class="fas fa-phone"></i> +021 365 777</li>
+                                <li>
+																	<a href="https://api.whatsapp.com/send?phone=+16137005069&text=Hello%20GCOS%20Finance.%20Please%20tell%20me%20about%20your%20services." style="text-decoration: none; color:white;">
+																		<i class="fas fa-phone"></i> +1 (613) 700-5069
+																	</a>
+																</li>
                             </ul>
                         </div>
                     </div>
@@ -38,7 +40,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav text-center  ml-lg-auto">
                             <li class="nav-item active  mr-3">
-                                <a class="nav-link" href="">Home
+                                <a class="nav-link" href="{% url 'home' %}">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
