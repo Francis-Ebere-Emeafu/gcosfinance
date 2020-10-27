@@ -12,8 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<title>GCOSFinance | {% block title %}{% endblock title %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="keywords" content="Home Loan Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" content="Home Loan" />
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -40,72 +39,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-	
-	<!-- header -->
-	<header>
-	<div class="top">
-			<div class="container">
-				<div class="t-op row">
-					<div class="col-sm-6 top-middle">
-						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-					<div class="col-sm-6 top-left">
-						<ul>
-							<li><i class="fas fa-phone"></i> +021 365 777</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<h1>
-					<a class="navbar-brand text-capitalize" href="index.html">
-						Home Loan
-					</a>
-				</h1>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-				    aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav text-center  ml-lg-auto">
-						<li class="nav-item active  mr-3">
-							<a class="nav-link" href="index.html">Home
-								<span class="sr-only">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item  mr-3">
-							<a class="nav-link" href="about.html">About</a>
-						</li>
-						<li class="nav-item  mr-3">
-							<a class="nav-link" href="services.html">Services</a>
-						</li>
-						<li class="nav-item dropdown mr-3">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-							    aria-expanded="false">
-								Dropdown
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="typography.html">Typography</a>
-								<a class="dropdown-item" href="gallery.html">Gallery</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html">contact</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!-- //header -->
+	{% include 'header.html' %}
 	<!-- banner -->
 	<section class="banner">
 		<div class="callbacks_container">
@@ -149,13 +83,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<!-- //banner -->
 	<!-- Products -->
 	<section class="services py-5">
-		<div class="container py-md-4 mt-md-3"> 
+		<div class="container py-md-4 mt-md-3">
 			<h2 class="heading-agileinfo">Loan Products We Offer <span>Speed Up the Loan Process</span></h2>
 			<span class="w3-line black"></span>
 			<div class="row inner_w3l_agile_grids-1 mt-md-5 pt-4">
 				<div class="col-md-4 w3layouts_news_left_grid1">
 					<div class="new_top">
-						<i class="fas fa-home"></i>			
+						<i class="fas fa-home"></i>
 						<h3 class="mb-3 mt-3">1.Buying a home</h3>
 						<p>Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut. Proin ac fermentum est. Cras mi ipsum</p>
 					</div>
@@ -175,8 +109,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			
-	</div>   
+
+	</div>
 </section>
 <!-- //Products -->
 <!-- video -->
@@ -192,7 +126,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<!--  video-button-popup -->
 				<div id="small-dialog1" class="mfp-hide">
 					<div class="agileits_modal_body">
-						<iframe src="https://player.vimeo.com/video/83557847"></iframe> 
+						<iframe src="https://player.vimeo.com/video/83557847"></iframe>
 					</div>
 				</div>
 				<!-- // video-button-popup -->
@@ -256,7 +190,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					</div>
 			</div>
 			<div class="col-lg-6 details-w3l">
-				<img src="images/g4.jpg" class="img-fluid" alt="" />
+				<img src="{% static 'images/g4.jpg' %}" class="img-fluid" alt="" />
 			</div>
 			</div>
 		</div>
@@ -283,7 +217,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<h3>Happy Clients</h3>
 			</div>
 		</div>
-   </div>	
+   </div>
 </section>
 <!-- //stats -->
 
@@ -299,29 +233,29 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					<div class="stats1">
 						<div class="row stats_inner">
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo1.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo1.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo2.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo2.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
 						</div>
 						<div class="row stats_inner top-st">
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo3.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo3.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo1.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo1.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
-							
+
 						</div>
 						<div class="row stats_inner top-st">
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo1.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo1.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<img src="images/logo3.jpg" alt="logo1" class=" img-fluid">
+								<img src="{% static 'images/logo3.jpg' %}" alt="logo1" class=" img-fluid">
 							</div>
-							
+
 						</div>
 					</div>
 					<!-- //stats -->
@@ -406,7 +340,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			<span class="w3-line black"></span>
 			<div class="card-deck mt-md-5 pt-5">
 				  <div class="card">
-					<img src="images/g7.jpg" class="img-fluid" alt="Card image cap">
+					<img src="{% static 'images/g7.jpg' %}" class="img-fluid" alt="Card image cap">
 					<div class="card-body w3ls-card">
 					  <h5 class="card-title">Smart Moving Tips</h5>
 					  <p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -416,7 +350,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					</div>
 				  </div>
 				  <div class="card">
-					<img src="images/g6.jpg" class="img-fluid" alt="Card image cap">
+					<img src="{% static 'images/g6.jpg' %}" class="img-fluid" alt="Card image cap">
 					<div class="card-body w3ls-card">
 					  <h5 class="card-title">A Big Time Saver</h5>
 					   <p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -426,7 +360,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					</div>
 				  </div>
 				  <div class="card">
-					<img src="images/g8.jpg" class="img-fluid" alt="Card image cap">
+					<img src="{% static 'images/g8.jpg' %}" class="img-fluid" alt="Card image cap">
 					<div class="card-body w3ls-card">
 					  <h5 class="card-title">Is Now the Time to Fix?</h5>
 					   <p class="card-text mb-3">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -439,107 +373,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             </div>
         </section>
 <!-- //news -->
-<!--footer-->
-	<footer>
-		<div class="container py-md-4 mt-md-3">
-			<div class="row footer-top-w3layouts-agile py-5">
-				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
-					<div class="footer-title">
-						<h3>About Us</h3>
-					</div>
-					<div class="footer-text">
-						<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
 
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
-					<div class="footer-title">
-						<h3>Contact Us</h3>
-					</div>
-					<div class="footer-office-hour">
-						<ul>
-							<li class="hd">Address :</li>
-							<li>No.27 - 5549436 street lorem, Newyork City, USA</li>
-
-						</ul>
-						<ul>
-							<li class="hd">Phone:+ 1 (234) 567 8901</li>
-							<li class="hd">Email:
-								<a href="mailto:info@example.com">info@example.com</a>
-							</li>
-							<li class="hd">Fax: 1(234) 567 8901</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
-					<div class="footer-title">
-						<h3>Recent Posts</h3>
-					</div>
-					<div class="footer-list">
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g1.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g2.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g3.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g4.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g5.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g6.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g7.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g9.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="flickr-grid">
-							<a href="#" data-toggle="modal" data-target="#myModal">
-								<img src="images/g8.jpg" class="img-fluid" alt=" ">
-							</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 footer-grid">
-					<div class="footer-title">
-						<h3>Subscribe</h3>
-					</div>
-					<p>Vivamus magna justo, lacinia eget consectetur sed.</p>
-					<form action="#" method="post" class="newsletter">
-						<input class="email" type="email" placeholder="Your email..." required="">
-						<button class="btn1">
-							<i class="far fa-envelope"></i>
-						</button>
-					</form>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</footer>
+<!-- footer Here  -->
 	<!---->
 	<div class="copyright py-3">
 		<div class="container">
@@ -571,8 +406,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="copyrightbottom">
-				<p>© 2018 Home Loan. All Rights Reserved | Design by
-					<a href="http://w3layouts.com/">W3layouts</a>
+				<p>© 2018 GCOS Finance. All Rights Reserved
+					<a href="http://coding4africa.com"></a>
 				</p>
 			</div>
 			<div class="clearfix"></div>
@@ -583,7 +418,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Home Loan</h4>
+        <h4 class="modal-title">GCOS Finance</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
