@@ -40,6 +40,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	{% include 'header.html' %}
+
+	{% block content %}
+
 	<!-- banner -->
 	<section class="banner">
 		<div class="callbacks_container">
@@ -49,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="banner-text container">
 							<h4 class="movetxt text-left mb-3 agile-title text-capitalize">Don't Miss Your Perfect House!</h4>
 							<p class="text-white mb-3">Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper varius orci. Nulla accumsan ac elit in congue.</p>
-							<a class="bt text-capitalize" href="about.html" role="button"> read more
+							<a class="bt text-capitalize" href="{% url 'home' %}" role="button">  Get Started
 								<i class="fas fa-angle-double-right"></i>
 							</a>
 						</div>
@@ -60,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="banner-text container">
 							<h4 class="movetxt text-left mb-3 agile-title text-capitalize">The Fastest Way To Your New Home</h4>
 							<p class="text-white mb-3">Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper varius orci. Nulla accumsan ac elit in congue.</p>
-							<a class="bt text-capitalize" href="about.html" role="button"> read more
+							<a class="bt text-capitalize" href="{% url 'home' %}" role="button">  Get Started
 								<i class="fas fa-angle-double-right"></i>
 							</a>
 						</div>
@@ -69,9 +72,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li>
 					<div class="slider-info bg3">
 						<div class="banner-text container">
-							<h4 class="movetxt text-left mb-3 agile-title text-capitalize">Make Your Dreams Come True</h4>
-							<p class="text-white mb-3">Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper varius orci. Nulla accumsan ac elit in congue.</p>
-							<a class="bt text-capitalize" href="about.html" role="button"> read more
+							<h4 class="movetxt text-left mb-3 agile-title text-capitalize">Make Your Dreams Come True With GCOS Finance</h4>
+							<p class="text-white mb-3">With our trusted Financials Advisory, your Insurance Needs, Retirement Plans, Real Estate Investments, and other Advisory services, are sure to get the desired attention.</p>
+							<a class="bt text-capitalize" href="{% url 'home' %}" role="button"> Get Started
 								<i class="fas fa-angle-double-right"></i>
 							</a>
 						</div>
@@ -373,7 +376,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </section>
 <!-- //news -->
-
+{% endblock content %}
 <!-- footer Here  -->
 	<!---->
 	<div class="copyright py-3">

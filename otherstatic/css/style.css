@@ -533,6 +533,9 @@ p.sub-para {
     font-weight: 600;
     letter-spacing: 1px;
     text-shadow: 2px 1px 1px #000;
+    border-radius: 25px;
+    padding: 10px;
+    background: #6fc932;
 }
 
 /* //text slider */
