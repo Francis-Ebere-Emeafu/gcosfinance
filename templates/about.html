@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Us {% endblock %}
+
+{% block banner %}
+<!-- inner-banner -->
+<section class="banner-1">
+</section>
+<!-- //inner-banner -->
+{% endblock banner %}
+
+{% block content %}
+<!-- about -->
+<section class="welcome py-5">
+  <div class="container py-md-4 mt-md-3">
+    <h2 class="heading-agileinfo">About Us <span>Why GCOSFinance Stands For You</span></h2>
+    <span class="w3-line black"></span>
+    <div class="row about-tp mt-md-5 pt-5">
+      <div class="col-lg-6 welcome-left">
+        <h3>Welcome</h3>
+        <h4>
+          We are striving to build the world’s most condusive place, with safe and secured future for everyone.
+        </h4>
+        <p>
+          Our goal is to achieve this, through the culture of planing for positive impacts on our clients,
+          partners, shareholders, competitors and everyone else who we come in contact with.
+        </p>
+        <h4>
+          We are charged with the mission of providing you with the world’s most actionable financial planning experience to suit, any life endeavour you find your self in.
+        </h4>
+        <p>
+          we firmly believe in the values that places human life above any other imaginable.
+          Our vision is to continually up the standard of excellence by being innovative,
+          financially strong, and exceeding our customers expectations on all sides.
+        </p>
+      </div>
+      <div class="col-lg-6 welcome-right">
+        <div class="welcome-right-top">
+          <img src="{% static 'images/g1.jpg' %}" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- //about -->
+
+<!-- w3layouts_bottom -->
+<section class="banner-2">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-9 w3layouts_getin_info">
+      <h3>Secure Your Slot Now</h3>
+    </div>
+    <div class="col-lg-3 w3layouts_getin">
+      <a href="{% url 'contact' %}">Contact Us</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- //w3layouts_bottom -->
+
+<!-- about-team -->
+
+<section class="welcome py-5">
+  <div class="container py-md-4 mt-md-3">
+    <h2 class="heading-agileinfo"><span>Meet Our Resource Person</span></h2>
+    <span class="w3-line black"></span>
+    <div class="row about-tp mt-md-5 pt-5">
+      <div class="col-lg-4 welcome-right">
+        <div class="welcome-right-top">
+          <img src="{% static 'images/goodness.jpeg' %}" alt="" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-8 welcome-left">
+        <h3>Goodness Okwueze</h3>
+        <h4>
+          Mrs. Goodness is a seasoned nurse and financial expert....
+        </h4>
+        <p>
+          More details coming soon!
+        </p>
+        <h4>
+
+        </h4>
+        <p>
+
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- //about-team -->
+{% endblock content %}

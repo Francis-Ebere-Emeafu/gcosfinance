@@ -1140,16 +1140,21 @@ a.facebook:hover {
 .btn-gcos:hover{
   background: #28a745;
 }
+
 .banner-1 {
-    /* background: rgba(0, 0, 0, 0.9); */
-    /* background-image:  url(../images/money.jpg)no-repeat; */
-    /* background: url(../images/money.jpg)no-repeat; */
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/money.jpg)no-repeat;
     background-repeat:no-repeat;
     background-position:center center;
     height: 10vw;
 }
 
+
+.banner-2 {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/insurance.jpg)no-repeat;
+    background-repeat:no-repeat;
+    background-position:center center;
+    height: 10vw;
+}
 
 .w3layouts_bottom {
     background:url(../images/bg3.jpg) no-repeat 0px 0px;
@@ -1845,13 +1850,17 @@ table.table.table-striped,.table-bordered,.bs-docs-example {
     float: none;
     text-align: center;
 }
+.center {
+  margin: auto;
+  padding: 10px;
+}
 .w3layouts_getin_info {
     margin-bottom: 1em;
 }
 .w3layouts_getin_info h3 {
     text-align:center;
 }
-.banner-1 {
+.banner-1 .banner-2{
     height: 26vw;
 }
 .testi-left {
@@ -1928,7 +1937,7 @@ h4.agile-title {
 }
 
 @media screen and (max-width: 640px) {
-.banner-1 {
+.banner-1 .banner-2{
     height: 29vw;
 }
 }
@@ -1999,7 +2008,7 @@ h4.agile-title {
     left: 39%;
     top: 30%;
 }
-.banner-1 {
+.banner-1 .banner-2{
     height: 34vw;
 }
 .welcome-left h3 {
@@ -2114,7 +2123,7 @@ p.card-text {
     font-size: 21px;
 	letter-spacing:3px;
 }
-.banner-1 {
+.banner-1 .banner-2{
     height: 37vw;
 }
 .new_top h3 {
