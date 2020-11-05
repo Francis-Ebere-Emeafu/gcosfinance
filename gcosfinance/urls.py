@@ -21,7 +21,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name='base.html'), name='home'),
-    path('contact/', include(('contact.urls'))),
+    path('contact/', include('contact.urls')),
 
     path('home', RedirectView.as_view(url=reverse_lazy('job_application:job_application'))),
     path('admin/', admin.site.urls),

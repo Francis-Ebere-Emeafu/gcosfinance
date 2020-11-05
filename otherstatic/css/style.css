@@ -542,7 +542,6 @@ p.sub-para {
 }
 
 .slider-info a:hover{
-  /* padding: 11px; */
   background: #376e13;
   opacity:1;
 }
@@ -1127,10 +1126,31 @@ a.facebook:hover {
 .copyrighttop h4 {
 	font-size: 0.95em;
 }
-.banner-1 {
-    background: url(../images/bg2.jpg)no-repeat;
-    height: 18vw;
+
+.font-green a i{
+  background: #6fc932;
+  /* background: #28a745; */
 }
+
+.btn-gcos {
+  color: #fff;
+  background: #6fc932;
+}
+
+.btn-gcos:hover{
+  background: #28a745;
+}
+.banner-1 {
+    /* background: rgba(0, 0, 0, 0.9); */
+    /* background-image:  url(../images/money.jpg)no-repeat; */
+    /* background: url(../images/money.jpg)no-repeat; */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/money.jpg)no-repeat;
+    background-repeat:no-repeat;
+    background-position:center center;
+    height: 10vw;
+}
+
+
 .w3layouts_bottom {
     background:url(../images/bg3.jpg) no-repeat 0px 0px;
 	text-align: center;
