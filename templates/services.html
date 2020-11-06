@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
-{% block title %} Contact Us {% endblock %}
+{% load static %}
+{% block title %} Our Services{% endblock %}
 
 {% block banner %}
 <!-- inner-banner -->
@@ -10,5 +10,51 @@
 {% endblock banner %}
 
 {% block content %}
-
+<!-- news -->
+<section class="wthree-row w3-about py-5">
+    <div class="container py-md-4 mt-md-3">
+        <h3 class="heading-agileinfo">Our Services<span>GCOSFinance cares about your secured future and you</span></h3>
+        <span class="w3-line black"></span>
+        <div class="card-deck mt-md-5 pt-5">
+            <div class="card">
+                <img src="{% static 'images/g7.jpg' %}" class="img-fluid" alt="Card image cap">
+                <div class="card-body w3ls-card">
+                    <h5 class="card-title" style="text-align:center;">Smart Financial Plan</h5>
+                    <p class="card-text mb-3 ">
+                      GCOS believe everyone should have an amazing financial plan.
+                      We would help you achieve this without changing your current budget</p>
+                </div>
+                <a href="{% url 'start' %}">
+                  <div class="card-footer" style="text-align:center;">
+                      <small class="text-muted">Let's get you started</small>
+                  </div>
+                </a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/live.jpg' %}" class="img-fluid" alt="Card image cap">
+                <div class="card-body w3ls-card">
+                    <h5 class="card-title" style="text-align:center;">Stable Living and Secured Future</h5>
+                    <p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <a href="{% url 'start' %}">
+                  <div class="card-footer" style="text-align:center;">
+                      <small class="text-muted">Click to begin.</small>
+                  </div>
+                </a>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/g8.jpg' %}" class="img-fluid" alt="Card image cap">
+                <div class="card-body w3ls-card">
+                    <h5 class="card-title" style="text-align:center;">Is Now the Time to Fix?</h5>
+                    <p class="card-text mb-3">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <a href="{% url 'start' %}">
+                  <div class="card-footer" style="text-align:center;">
+                    <small class="text-muted">Just one step away!</small>
+                  </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}

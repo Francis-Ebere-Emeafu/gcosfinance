@@ -1914,6 +1914,16 @@ table.table.table-striped,.table-bordered,.bs-docs-example {
 .card-deck .card {
     flex: auto;
 }
+
+.card-style{
+  text-align:center;
+}
+a.card-style:hover{
+  background-color:#6fc932;"
+  background: #6fc932;
+  color:#fff;
+}
+
 .card:nth-child(2) {
 	margin-top:1.5em;
 	margin-bottom:1.5em;
