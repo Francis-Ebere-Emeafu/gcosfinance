@@ -190,7 +190,8 @@ header h1 a span {
 /* banner */
 
 .bg1 {
-    background: url(../images/bg2.jpg)no-repeat;
+    background:linear-gradient(rgba(71, 0, 45, 0.4), rgba(0, 71, 20, 0.4)), url(../images/gcos11.jpeg)no-repeat;
+    /* bg2.jpg */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -200,7 +201,8 @@ header h1 a span {
 }
 
 .bg2 {
-    background: url(../images/bg3.jpg)no-repeat;
+    background:linear-gradient(rgba(0, 71, 20, 0.3), rgba(255, 0, 150, 0.3)), url(../images/gcos10.jpeg)no-repeat;
+    /* bg3.jpg */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -210,7 +212,8 @@ header h1 a span {
 }
 
 .bg3 {
-    background: url(../images/bg.jpg)no-repeat;
+    background:linear-gradient(rgba(71, 0, 45, 0.4), rgba(71, 0, 45, 0.4)), url(../images/gcos12.jpeg)no-repeat;
+    /* bg.jpg */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
