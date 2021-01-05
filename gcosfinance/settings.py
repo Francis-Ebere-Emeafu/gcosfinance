@@ -25,7 +25,7 @@ SECRET_KEY = '-v1zw)vni%z(ah8+g$6-$dgwdie34f^el&wp^(4$ocv-6294ks'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'www.gcosfinance.com', 'gcosfinance.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'www.gcosfinance.com', 'gcosfinance.com', '162.243.173.228']
 
 
 # Application definition
@@ -142,5 +142,4 @@ MEDIA_ROOT = os.path.join(STATIC_ROOT, "media")
 try:
     from local_settings import *
 except ImportError:
-
     pass
