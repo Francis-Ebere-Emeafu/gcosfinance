@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 100%;
     overflow-x: hidden;
-	background:#f5f7f8;
+    background:#f5f7f8;
 }
 
 body a {
@@ -220,6 +220,10 @@ header h1 a span {
     -ms-background-size: cover;
     background-size: cover;
     height: 45vw;
+}
+
+.banner-form {
+    padding: 15vw 0 0;
 }
 
 .banner-text {

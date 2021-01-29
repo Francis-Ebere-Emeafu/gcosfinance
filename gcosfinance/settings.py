@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'assessment.apps.AssessmentConfig',
+    'assessment.apps.AssessmentConfig',
     'contact.apps.ContactConfig',
-    # 'subscrib.apps.SubscribConfig',
-    'job_application',
+    'account.apps.AccountConfig',
+    # 'subscrib.apps.SubscribConfig', 
 ]
 
 MIDDLEWARE = [

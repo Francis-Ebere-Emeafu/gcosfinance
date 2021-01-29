@@ -32,6 +32,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome icons -->
     <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet">
+    {% block extra_css %}
+    {% endblock extra_css %}
     <!-- //Custom Theme files -->
     <!-- online fonts -->
     <!-- titles -->
@@ -90,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </section>
     <!-- //banner -->
     {% endblock banner %}
-<div class="" style="min-height:400px;">
+<div class="" style="min-height:460px;">
     {% block content %}
     <!-- Products -->
     <section class="services py-5">
@@ -539,6 +541,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <!-- //Bootstrap Core JavaScript -->
+    {% block extra_js %}
+    {% endblock extra_js %}
 </body>
 
 </html>
