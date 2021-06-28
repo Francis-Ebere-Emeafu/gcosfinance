@@ -13,12 +13,15 @@ def start(request):
             new_account = form.save(commit=False)
             email = form.cleaned_data.get('email').lower()
             password = form.cleaned_data.get('phone')
+            first_name = form.cleaned_data.get('first_name').lower()
+            last_name = form.cleaned_data.get('last_name').lower()
             new_user = User.objects.create_user(username=email, email=email, password=password)
             print(new_user)
             new_account.user = new_user
             new_account.save()
             request.session['email'] = new_user.email
-            return redirect("register")
+            return redirect("questions")
+            # return redirect("register")
 
         else:
             context['form'] = form

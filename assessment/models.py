@@ -1,13 +1,111 @@
 import hashlib, random, sys
 from django.db import models
+from django.utils import timezone
+
+from django.urls import reverse
+from django.utils.text import slugify
+from account.models import Account
 
 
+class QuestionManager(models.Manager):
+    def new(self):
+        return self.order_by('-added_at')
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, null=True, blank=True)
+
+    # objects = QuestionCategoryManager()
+
+    def __str__(self):
+        return self.name
+
+    def get_url(self):
+        return f"/category/{self.id}"
+
+    def get_number(self):
+        # this method returns a number of related questions
+        c = Category.objects.annotate(num_questions=models.Count('question')).filter(id=self.id)
+        return c[0].num_questions
+
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.name) + str(self.id)
+    #     super(Category, self).save(*args, **kwargs)
 
 
+class Question(models.Model):
+    TYPES = (
+        (1, 'radio'),
+        (2, 'text'),
+        )
+    text = models.TextField(blank=False, null=False)
+    type = models.IntegerField(choices=TYPES, default=1)
+    author = models.ForeignKey(Account, null=True, on_delete=models.SET(value='Deleted'))
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
+    added_at = models.DateField(auto_now=True)
 
 
+    objects = QuestionManager()
+
+    def __str__(self):
+        return self.text
+
+    def get_url(self):
+        return reverse('question', kwargs={'qn_id': self.id})
+
+
+class QuestionOption(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    text = models.TextField()
+    weight = models.IntegerField(default=1)
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.text}"
+
+    class Meta:
+        ordering = ['weight']
+
+
+class Answer(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.SET(value='Deleted'))
+    option = models.ForeignKey(QuestionOption, on_delete=models.CASCADE)
+    text = models.TextField(null=True)
+    active = models.BooleanField(default=True)  # added in case i'll need to deactivate some answers fsr
+    added_at = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.text
+
+    @property
+    def question(self):
+        return self.option.question
+
+
+STATUS_CHOICES = (
+    (1, 'radio'),
+    (2, 'text'),
+)
+
+
+class Project(models.Model):
+    description = models.CharField(max_length=50, blank=True, null=True)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=1)
+    # owner = models.ForeignKey(staff, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.description
+
+
+class Update(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    notes = models.CharField(max_length=50, blank=True, null=True)
+    update_date = models.DateTimeField(default=timezone.now, editable=False)
+    added_by = models.CharField(max_length=35, blank=True)
+
+    def __str__(self):
+        return self.notes
 
 
 

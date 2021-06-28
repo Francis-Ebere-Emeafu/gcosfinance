@@ -95,6 +95,9 @@ header h1 a span {
 
 /*-- //header --*/
 /* -- TOP HEADER */
+.element1 {display:inline-block;margin-right:10px;}
+.element2 {display:inline-block;}
+
 .top-middle li {
     display: inline-block;
 }

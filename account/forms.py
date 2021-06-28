@@ -10,7 +10,7 @@ class StartForm(forms.ModelForm):
     # email = forms.EmailField(max_length=255, help_text="Required. Add a valid email address")
     class Meta:
         model = Account
-        fields = ('email', 'phone')
+        fields = ('email', 'phone', 'first_name', 'last_name')
         # 'first_name', 'last_name',
 
     def clean_email(self):
@@ -30,6 +30,18 @@ class StartForm(forms.ModelForm):
         except Exception as e:
             return phone
         raise forms.ValidationError(f"{phone} is already used.")
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data['first_name']
+        if first_name:
+            return first_name
+        raise forms.ValidationError(f"Enter a valid name")
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data['last_name']
+        if last_name:
+            return last_name
+        raise forms.ValidationError(f"Enter a valid name")
 
 
 class NameForm(forms.ModelForm):

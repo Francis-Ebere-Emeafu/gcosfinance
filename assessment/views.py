@@ -2,32 +2,66 @@ from django.forms import modelform_factory
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import FormView
+from django.forms import modelformset_factory, BaseFormSet
 
-from assessment.forms import QuestionForm
-
+from assessment.models import Question, Answer, Category, Project
+from assessment.forms import QuestionForm, AnswerForm, EditProjectForm, CreateUpdateForm
+from account.models import Account
+# from .forms import AskForm, AnswerForm, CategoryForm
 
 def questions(request):
-    context = {}
-    if request.POST:
-        form = QuestionForm(request.POST)
-        if form.is_valid():
-            pass
-            # new_account = form.save(commit=False)
-            # email = form.cleaned_data.get('email').lower()
-            # password = form.cleaned_data.get('phone')
-            # new_user = User.objects.create_user(username=email, email=email, password=password)
-            # print(new_user)
-            # new_account.user = new_user
-            # new_account.save()
-            # request.session['email'] = new_user.email
-            # return redirect("register")
+    questions = Question.objects.all()
+    AnswerFormset = modelformset_factory(Question, extra=0, fields=[], form=AnswerForm)
+    formset = AnswerFormset(queryset=questions)
+    for qst in questions:
+        print(qst)
 
-        else:
-            context['form'] = form
+    if request.method == "POST":
+        formset = AnswerFormset(request.POST, queryset=questions)
+        if formset.is_valid():
+            for form in formset.forms:
+                option = form.cleaned_data['answer']
+                print(option)
+                # Answer.objects.create(
+                #     account=request.user,
+                #     option=option,
+                #     text='',
+                # )
+            return redirect('home')
+    else:
+        formset = AnswerFormset(queryset=questions)
+
+    context = {"formset": formset}
+
     return render(request, 'assessment/questions.html', context)
 
 
+def projects(request):
+    project_formset = modelformset_factory(Project, form=CreateUpdateForm, extra=0)
+     # fields=['status']
+    projects = Project.objects.all()
 
+    if request.method == 'POST':
+        formset = project_formset(request.POST, request.FILES, queryset=projects)
+        if formset.is_valid():
+            for f in formset:
+                project = f.save(commit = False)
+
+                update_form = CreateUpdateForm(request.POST,request.FILES)
+                if update_form.is_valid():
+                    update = update_form.save(commit = False)
+                    update.project = project
+                    project.save()
+                    update.save()
+                else:
+                    print(update_form.errors)
+            return redirect('/')
+        else:
+            print(formset.errors)
+    else:
+        formset = project_formset(queryset=projects)
+        update_form = CreateUpdateForm()
+        return render(request,'assessment/projects.html',{'formset':formset, 'update_form':update_form})
 
 
 

@@ -1,0 +1,23 @@
+<form method="POST" enctype= multipart/form-data>
+  {{ formset.management_form }}
+  {% csrf_token %}
+  {%for form in formset%}
+    {{ form.management_form }}
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+  <div class="card border-primary mb-3" style="max-width: 85rem;">
+    <div class="card-header text-primary">
+       <strong>{{form.instance.description}}</strong>
+    </div>
+    <div class="card-body text-primary"> Project Name: {{form.description}}</div>
+    <div class="card-body text-primary"> Status: {{form.status}}</div>
+    <div class="card-body text-primary"> Owner: {{form.owner}}</div>
+    <div class="card-body text-primary"> Priority: {{form.priority}}</div>
+    <div>
+        {{ update_form }}
+    </div>
+  </div>
+  {% endfor %}
+  <button class="btn btn-success btn" type="submit">Save Changes</button>
+ </form>
