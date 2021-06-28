@@ -14,7 +14,7 @@ class QuestionOptionInline(admin.TabularInline):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ['text', 'author', 'added_at', ]
+    list_display = ['text', 'added_at', ]
 
     inlines = [QuestionOptionInline]
 
