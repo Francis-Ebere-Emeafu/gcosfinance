@@ -41,7 +41,7 @@ class Question(models.Model):
         )
     text = models.TextField(blank=False, null=False)
     type = models.IntegerField(choices=TYPES, default=1)
-    author = models.ForeignKey(Account, null=True, on_delete=models.SET(value='Deleted'))
+    # author = models.ForeignKey(Account, null=True, on_delete=models.SET(value='Deleted'))
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
     added_at = models.DateField(auto_now=True)
 
