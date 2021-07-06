@@ -70,7 +70,7 @@ class QuestionOption(models.Model):
 
 class Answer(models.Model):
     account = models.ForeignKey(Account, on_delete=models.SET(value='Deleted'))
-    option = models.ForeignKey(QuestionOption, on_delete=models.CASCADE)
+    option = models.ForeignKey(QuestionOption, null=True, on_delete=models.SET_NULL)
     text = models.TextField(null=True)
     active = models.BooleanField(default=True)  # added in case i'll need to deactivate some answers fsr
     added_at = models.DateField(auto_now=True)

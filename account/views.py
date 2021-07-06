@@ -19,7 +19,7 @@ def start(request):
             print(new_user)
             new_account.user = new_user
             new_account.save()
-            request.session['email'] = new_user.email
+            request.session['email'] = new_user.email 
             return redirect("questions")
             # return redirect("register")
 

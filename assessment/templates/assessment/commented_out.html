@@ -1,0 +1,37 @@
+<fieldset>
+    <h2 class="fs-title"></h2>
+    <h3 class="fs-subtitle" style="font-size: 20px;">What's your ideal retirement age?</h3>
+    <span id="errorMsg" style="display:none; color:red;">
+      <h3 class="fs-subtitle" style="color:red;">Retirement age must be greater than 65</h3>
+    </span>
+    <input type="number" id="txtNumber" name="retirement" min="65" placeholder="Retirement age" required/>
+    <input type="button" name="next" class="next action-button" value="Next"/>
+</fieldset>
+
+<fieldset>
+    <h2 class="fs-title"></h2>
+    <h3 class="fs-subtitle" style="font-size: 20px;">Do you want to include a spouse in your plan?</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <input type="radio" name="spouse" id="RadioYes" placeholder="" value="Yes" required/>
+        <label class="fs-subtitle" for="RadioYes">Yes</label>
+      </div>
+      <div class="col-md-6">
+        <input type="radio" name="spouse" id="RadioNo"  placeholder="" value="No" required/>
+        <label class="fs-subtitle" for="RadioNo">No</label>
+      </div>
+    </div>
+    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+    <input type="button" name="next" class="next action-button" value="Next"/>
+</fieldset>
+
+<fieldset>
+  <h2 class="fs-title"></h2>
+  <h3 class="fs-subtitle" style="font-size: 20px;">How old are you?</h3>
+  <span id="AgeErrorMsg" style="display:none; color:red;">
+    <h3 class="fs-subtitle" style="color:red;">You must be between 18 and 65 to create a plan</h3>
+  </span>
+  <input type="number" id="AgeNumber" name="age" min="18" placeholder="Age" required/>
+  <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+  <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+</fieldset>

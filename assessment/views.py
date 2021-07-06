@@ -4,15 +4,20 @@ from django.urls import reverse
 from django.views.generic import FormView
 from django.forms import modelformset_factory, BaseFormSet
 
-from assessment.models import Question, Answer, Category, Project
+from assessment.models import Question, QuestionOption, Answer, Category, Project
 from assessment.forms import QuestionForm, AnswerForm, EditProjectForm, CreateUpdateForm
 from account.models import Account
 # from .forms import AskForm, AnswerForm, CategoryForm
 
 def questions(request):
+    email = request.session.get('email')
+    account = Account.objects.get(email=email)
+    print(account)
     questions = Question.objects.all()
     AnswerFormset = modelformset_factory(Question, extra=0, fields=[], form=AnswerForm)
     formset = AnswerFormset(queryset=questions)
+    # Display all the questions here!
+    print("--- these are the questions ---")
     for qst in questions:
         print(qst)
 
@@ -20,13 +25,22 @@ def questions(request):
         formset = AnswerFormset(request.POST, queryset=questions)
         if formset.is_valid():
             for form in formset.forms:
-                option = form.cleaned_data['answer']
-                print(option)
-                # Answer.objects.create(
-                #     account=request.user,
-                #     option=option,
-                #     text='',
-                # )
+                question = form.instance
+                option_text = form.cleaned_data['answer']
+                question_instance = Question.objects.get(text=question)
+                option_instance = None
+                text = "Question:\n{}\n \nAnswer: \n{}".format(question, option_text)
+                print(text)
+
+                # Check if question-answer type is option or text
+                if question_instance.type == 1:
+                    option_instance = QuestionOption.objects.get(question=question, text=option_text)
+                    
+                Answer.objects.create(
+                    account=account,
+                    option=option_instance,
+                    text=text,
+                )
             return redirect('home')
     else:
         formset = AnswerFormset(queryset=questions)
